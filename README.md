@@ -1,4 +1,4 @@
-# vue-webpack-template
+# vue-webpack-starter-kit
 
 > Basic webpack template for my projects with vue-router
 

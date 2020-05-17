@@ -8,6 +8,7 @@ Vue.use(Router)
 
 export default new Router({
 
+  mode: 'history',
   routes: [
 
     {
@@ -17,7 +18,7 @@ export default new Router({
       component: HelloWorld
 
     },
-    
+
     //404 routes. Must be at the end of the routes array
     {
 

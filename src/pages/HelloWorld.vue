@@ -81,6 +81,22 @@
         </a>
       </li>
     </ul>
+
+    <div>
+
+      <h1>Vuex</h1>
+
+      Example: {{example}} <br>
+      This will set the example variable in the store to the value of the input below <br>
+      <input type="text" v-model="example_val">
+      <button @click="add">ADD_SOMETHING</button>
+      <br>
+      Loaded: {{loadedExample}} <br>
+      This will wait a second and load the value <br>
+      <button @click="load">loadSomething</button>
+
+    </div>
+
   </div>
 
 </template>
@@ -94,7 +110,36 @@
 
       return {
 
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        example_val: ''
+
+      }
+
+    },
+    computed: {
+
+      example () {
+
+        return this.$store.getters.example
+
+      },
+      loadedExample () {
+
+        return this.$store.getters.loadedState
+
+      }
+
+    },
+    methods: {
+
+      add () {
+
+        this.$store.commit('ADD_SOMETHING', this.example_val)
+
+      },
+      load () {
+
+        this.$store.dispatch('loadSomething')
 
       }
 
@@ -104,32 +149,20 @@
 
 </script>
 
-<style scoped>
+<style lang="sass" scoped>
 
-  h1, h2 {
+  h1, h2
+    font-weight: normal
 
-    font-weight: normal;
+  ul
+    list-style-type: none
+    padding: 0
 
-  }
+  li
+    display: inline-block
+    margin: 0 10px
 
-  ul {
-
-    list-style-type: none;
-    padding: 0;
-
-  }
-
-  li {
-
-    display: inline-block;
-    margin: 0 10px;
-
-  }
-
-  a {
-
-    color: #42b983;
-
-  }
+  a
+    color: #42b983
 
 </style>
