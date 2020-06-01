@@ -10,11 +10,11 @@
     <link rel="shortcut icon" type="image/png" href="<%= BASE_URL %>icon.png">
     <title><%= htmlWebpackPlugin.options.title %></title>
 
-    <meta name="description" content="vue-webpack-template">
-    <meta name="theme-color" content="#ff0000">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
+    <meta name="theme-color" content="<%= htmlWebpackPlugin.options.themeColor %>">
 
-    <meta property="og:title" content="vue-webpack-template">
-    <meta property="og:description" content="vue-webpack-template description">
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>">
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.description %>">
     <meta property="og:image" content="<%= BASE_URL %>icon.png">
     <meta property="og:url" content="<%= BASE_URL %>">
 
@@ -28,6 +28,7 @@
 
     </noscript>
 
+    <!-- Vue application container -->
     <div id="app"></div>
 
   </body>
