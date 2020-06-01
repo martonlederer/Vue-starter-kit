@@ -1,40 +1,51 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+import About from '../views/About'
+import NotFound from '../views/NotFound'
 
-import NotFound from '@/pages/NotFound'
-import HelloWorld from '@/pages/HelloWorld'
+Vue.use(VueRouter)
 
-Vue.use(Router)
+const routes = [
 
-export default new Router({
+  {
+
+    path: '/',
+    name: 'Home',
+    component: Home
+
+  },
+  {
+
+    path: '/about',
+    name: 'About',
+    component: About
+
+  },
+  //404
+  {
+
+    path: '/404',
+    name: 'NotFound Manual',
+    component: NotFound
+
+  },
+  {
+
+    path: '*',
+    name: 'NotFound',
+    component: NotFound
+
+  }
+
+]
+
+const router = new VueRouter({
 
   mode: 'history',
-  routes: [
-
-    {
-
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-
-    },
-
-    //404 routes. Must be at the end of the routes array
-    {
-
-      path: '/404',
-      name: 'NotFound',
-      component: NotFound
-
-    },
-    {
-
-      path: '*',
-      name: 'NotFound',
-      component: NotFound
-
-    }
-
-  ]
+  base: process.env.BASE_URL,
+  routes
 
 })
+
+export default router

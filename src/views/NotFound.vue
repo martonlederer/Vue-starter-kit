@@ -1,13 +1,12 @@
 <template>
 
-  <h1>Not found</h1>
+    <div>Not found</div>
 
 </template>
 
 <script>
 
   export default {
-
     name: 'NotFound'
 
   }
@@ -15,7 +14,5 @@
 </script>
 
 <style lang="sass" scoped>
-
-
 
 </style>
