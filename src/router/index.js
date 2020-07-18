@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About'
-import NotFound from '../views/NotFound'
+import About from '../views/About.vue'
 
 Vue.use(VueRouter)
 
@@ -21,28 +20,13 @@ const routes = [
     name: 'About',
     component: About
 
-  },
-  //404
-  {
-
-    path: '/404',
-    name: 'NotFound Manual',
-    component: NotFound
-
-  },
-  {
-
-    path: '*',
-    name: 'NotFound',
-    component: NotFound
-
   }
 
 ]
 
 const router = new VueRouter({
 
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 
